@@ -10,6 +10,8 @@ const SignUp = () => {
         <Link href="/(auth)/sign-in">
             Sign in
         </Link>
+
+        <Link href="/">Home</Link>
     </View>
   )
 }

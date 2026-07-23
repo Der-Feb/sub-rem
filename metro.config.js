@@ -1,7 +1,9 @@
 const { getDefaultConfig } = require("expo/metro-config");
-const { withNativewind } = require("nativewind/metro");
- 
-/** @type {import('expo/metro-config').MetroConfig} */
+const { withNativeWind } = require('nativewind/metro');
+
 const config = getDefaultConfig(__dirname);
- 
-module.exports = withNativewind(config);
+
+// Ensure the web compiler bundles static assets cleanly
+config.resolver.assetExts.push('png', 'jpg', 'jpeg', 'svg');
+
+module.exports = withNativeWind(config, { input: './global.css' });
